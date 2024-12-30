@@ -2,9 +2,8 @@
 # Landuse Ratio Estimation
 This project estimates the landuse ratio of the single satellite image. This project is based on GeoChat. The model is trained to directly estimate ratio of landuse in images. The process is modeled as classification. The classification probabilities directly maps to ratio estimation.
 
-The model is trained with [SeasoNet](https://zenodo.org/records/5850307) dataset.
+The main difference in code implementation is [geochat/model/classifier.py](https://github.com/younhyungchae/Landuse_Ratio/blob/a30faa2690b3d306bff5aa00368ce8faf9397045/geochat/model/classifier.py) and [geochat/train/train_classifier.py](https://github.com/younhyungchae/Landuse_Ratio/blob/a30faa2690b3d306bff5aa00368ce8faf9397045/geochat/train/train_classifier.py).
 
-The main difference in code implementation is [geochat/model/classifier.py](https://github.com/younhyungchae/Landuse_Ratio/blob/a30faa2690b3d306bff5aa00368ce8faf9397045/geochat/model/classifier.py) and https://github.com/younhyungchae/Landuse_Ratio/blob/a30faa2690b3d306bff5aa00368ce8faf9397045/geochat/train/train_classifier.py
 |Classes|
 |-----------|
 |Residential|
@@ -18,6 +17,22 @@ The main difference in code implementation is [geochat/model/classifier.py](http
 |Religious|
 |Water|
 |Others|
+
+The model is trained with [SeasoNet](https://zenodo.org/records/5850307) dataset.
+
+Base classes in SeasoNet dataset is mapped as following. Classes not included below are considered as 'Others'.
+```
+class_mapping = {'Residential':['Continuous urban fabric', 'Discontinuous urban fabric'],
+                    'Agricultural':['Permanently irrigated land','Rice fields','Vineyards','Fruit trees and berry plantations','Olive groves','Complex cultivation patterns','Annual crops associated with permanent crops','Land principally occupied by agriculture, with significant areas of natural vegetation','Non-irrigated arable land'],                
+                    'Commercial': ['Industrial or commercial units'],
+                    'Factory':[],
+                    'Mining':['Mineral extraction sites'],
+                    'Power station':[],
+                    'Transportation':['Port areas','Airports','Road and rail networks and associated land'],
+                    'Sports':['Sport and leisure facilities'],
+                    'Religious':[],
+                    'Water':['Sea and ocean','Water courses','Water bodies','Coastal lagoons']}
+```
 
 ## Pretrained Model
 Pretrained Model: [landuse_ratio_classification_geochat](https://huggingface.co/YounhyungChae/landuse_ratio_classification_geochat)
