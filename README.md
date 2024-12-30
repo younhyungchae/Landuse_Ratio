@@ -42,7 +42,7 @@ git clone https://huggingface.co/MBZUAI/geochat-7B
   ```
 2. Remove Vision Tower from Geochat.
    
-  &#8251; You must remove vision tower parameter as well as mapping dictionary in pytorch_model.bin.index.json
+  &#8251; You must remove vision tower parameter as well as mapping dictionary in *pytorch_model.bin.index.json*
   
 3. Train with DeepSpeed ZeRO-3: finetune_lora.sh
 `bash scripts/finetune_lora.sh`
