@@ -1,3 +1,5 @@
+&#8251; This code is based on GeoChat(https://github.com/mbzuai-oryx/GeoChat.git) repository.
+
 ```
   @article{kuckreja2023geochat,
           title={GeoChat: Grounded Large Vision-Language Model for Remote Sensing},
