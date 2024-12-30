@@ -1,4 +1,8 @@
-&#8251; This code is based on [GeoChat](https://github.com/mbzuai-oryx/GeoChat.git) repository.
+&#8251; This code is based on [GeoChat](https://github.com/mbzuai-oryx/GeoChat.git) repository. Refer that repository for more detailed explanation.
+
+# Training
+
+# Inference
 
 ```
   @article{kuckreja2023geochat,
