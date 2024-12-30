@@ -479,9 +479,9 @@ class Chat:
                                          stopping_criteria=kwargs['kwargs']['stopping_criteria'])
             # import pdb;pdb.set_trace()
             # print(output)
-            outputs = self.tokenizer.decode(output[0,kwargs['kwargs']['input_ids'].shape[1]:]).strip()
+            outputs = self.tokenizer.decode(output[0,kwargs['kwargs']['input_ids'].shape[1]:], skip_special_tokens=True).strip()
             # print(outputs)
-        return output
+        return outputs
 
     def encode_img(self, img_list):
         

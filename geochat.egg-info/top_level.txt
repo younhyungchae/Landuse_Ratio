@@ -1,0 +1,5 @@
+GeoChat_Instruct
+demo_images
+geochat
+images
+models
