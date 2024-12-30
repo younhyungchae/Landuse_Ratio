@@ -1,7 +1,11 @@
 &#8251; This code is based on [GeoChat](https://github.com/mbzuai-oryx/GeoChat.git) repository. Refer that repository for more detailed explanation.
 # Landuse Ratio Estimation
 This project estimates the landuse ratio of the single satellite image.
+
 The model is trained with [SeasoNet](https://zenodo.org/records/5850307) dataset.
+
+|Classes|
+|-----------|
 |Residential|
 |Agricultural|
 |Commercial|
