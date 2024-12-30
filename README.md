@@ -4,6 +4,7 @@ This project estimates the landuse ratio of the single satellite image. This pro
 
 The model is trained with [SeasoNet](https://zenodo.org/records/5850307) dataset.
 
+The main difference in code implementation is [geochat/model/classifier.py](https://github.com/younhyungchae/Landuse_Ratio/blob/a30faa2690b3d306bff5aa00368ce8faf9397045/geochat/model/classifier.py) and https://github.com/younhyungchae/Landuse_Ratio/blob/a30faa2690b3d306bff5aa00368ce8faf9397045/geochat/train/train_classifier.py
 |Classes|
 |-----------|
 |Residential|
@@ -26,8 +27,8 @@ Pretrained Model: [landuse_ratio_classification_geochat](https://huggingface.co/
 |----------|-----------------------|
 |id| image id, not necessary|
 |image| image path, required|
-|converations| prompt and label|
-|label| dictionary in the format of  {class: ratio_label}|
+|converations| prompt and label, required|
+|label| dictionary in the format of  {class: ratio_label}, required|
 
 ### Dataset Example
 ```
@@ -56,6 +57,11 @@ Output path should be jsonline file.
 `python evaluate.py --model-path [MODEL_PATH] --image-path [IMAGE_PATH] --output-path [OUTPUT_PATH] --type cls`
 
 The code will automatically detects images not processed. (Does not perform redundant estimation.)
+
+## Visualization
+You can use gradio to see how estimation result maps to real satellite imagery map.
+`gradio landuse_visualize.py`
+&#8251; Currently only works for HUN Agricultural but uploaded it for reference.
 
 ```
   @article{kuckreja2023geochat,
