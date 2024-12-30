@@ -1,6 +1,6 @@
 &#8251; This code is based on [GeoChat](https://github.com/mbzuai-oryx/GeoChat.git) repository. Refer that repository for more detailed informations.
 # Landuse Ratio Estimation
-This project estimates the landuse ratio of the single satellite image.
+This project estimates the landuse ratio of the single satellite image. This project is based on GeoChat. The model is trained to directly estimate ratio of landuse in images. The process is modeled as classification. The classification probabilities directly maps to ratio estimation.
 
 The model is trained with [SeasoNet](https://zenodo.org/records/5850307) dataset.
 
@@ -47,8 +47,16 @@ git clone https://huggingface.co/MBZUAI/geochat-7B
 3. Train with DeepSpeed ZeRO-3: finetune_lora.sh
 `bash scripts/finetune_lora.sh`
 
+4. Merge LoRA adapter with base model
+   `bash scripts/merge.sh`
+   
 ## Inference
-`bash scripts/evaluate.sh`
+Following command finds all images in image path and append the estimation result to output path.
+
+Output path should be jsonline file.
+`python evaluate.py --model-path [MODEL_PATH] --image-path [IMAGE_PATH] --output-path [OUTPUT_PATH] --type cls`
+
+The code will automatically detects images not processed. (Does not perform redundant estimation.)
 
 ```
   @article{kuckreja2023geochat,
